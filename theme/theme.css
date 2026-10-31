@@ -14,6 +14,7 @@
   --ou:#d8b46c;
   --ou-2:#f0d59a;
   --ou-bg:rgba(216,180,108,.11);
+  --sel:rgba(255,255,255,.07);
   --link:#86b9b4;
   --link-bg:rgba(134,185,180,.12);
   --warn:#d99a86;
@@ -34,7 +35,7 @@
   :root:not([data-theme="dark"]){
     --bg:#e4dece; --sheet:#eee8da; --sheet-2:#e8e1d1; --sheet-3:#ded6c3; --rule:#d6cdb8; --line:#c2b79e;
     --ink:#2a2620; --ink-2:#4f493e; --ink-3:#827a68;
-    --kihon:#857f6e; --ou:#c96442; --ou-2:#ad5232; --ou-bg:rgba(201,100,66,.12);
+    --kihon:#857f6e; --ou:#c96442; --ou-2:#ad5232; --ou-bg:rgba(201,100,66,.12); --sel:#d8cfba;
     --link:#2e6b66; --link-bg:rgba(46,107,102,.10); --warn:#b03a4a; --warn-bg:rgba(176,58,74,.08);
     --g:#3d7a4f; --g-bg:rgba(61,122,79,.08); --panel:#e8e1d1; --hover:rgba(60,50,30,.05); --scrim:rgba(40,32,20,.25); --shadow:0 0 50px rgba(60,40,10,.12);
     color-scheme:light;
@@ -43,7 +44,7 @@
 :root[data-theme="light"]{
   --bg:#e4dece; --sheet:#eee8da; --sheet-2:#e8e1d1; --sheet-3:#ded6c3; --rule:#d6cdb8; --line:#c2b79e;
     --ink:#2a2620; --ink-2:#4f493e; --ink-3:#827a68;
-    --kihon:#857f6e; --ou:#c96442; --ou-2:#ad5232; --ou-bg:rgba(201,100,66,.12);
+    --kihon:#857f6e; --ou:#c96442; --ou-2:#ad5232; --ou-bg:rgba(201,100,66,.12); --sel:#d8cfba;
     --link:#2e6b66; --link-bg:rgba(46,107,102,.10); --warn:#b03a4a; --warn-bg:rgba(176,58,74,.08);
     --g:#3d7a4f; --g-bg:rgba(61,122,79,.08); --panel:#e8e1d1; --hover:rgba(60,50,30,.05); --scrim:rgba(40,32,20,.25); --shadow:0 0 50px rgba(60,40,10,.12);
   color-scheme:light;
@@ -128,7 +129,7 @@ b,strong{font-weight:700; color:var(--ink)}
 .item .dt::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--ou); opacity:.6}
 .item .nm{flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
 .item .cnt{flex:none; font:500 10px var(--f-mono); color:var(--ink-3)}
-.item.on{background:var(--ou-bg); color:var(--ink); font-weight:700}
+.item.on{background:var(--sel); color:var(--ink); font-weight:700}
 .item.on .dt::before{opacity:1}
 .empty-msg{padding:6px 8px 6px 26px; font-size:12px; color:var(--ink-3)}
 .res-h{padding:4px 12px 8px; font-size:11px; color:var(--ink-3)}
