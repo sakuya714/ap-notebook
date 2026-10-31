@@ -1,0 +1,13 @@
+{
+  "title": "部品見本",
+  "type": "理解型",
+  "labels": {
+    "base": "ふつう",
+    "accent": "試験で取るところ",
+    "accentShort": "重要"
+  },
+  "macros": {
+    "vx": "{\\mathbf{x}}",
+    "vw": "{\\mathbf{w}}"
+  }
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>部品見本</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../../_/theme.css">
+<link rel="stylesheet" href="../../_/blocks.css">
+<script>
+  // 表示前にテーマとサイドバーの状態を当てて、チラつきを防ぐ
+  (function () {
+    var r = document.documentElement;
+    try {
+      var t = localStorage.getItem("hub-theme"); if (t) r.setAttribute("data-theme", t);
+      if (localStorage.getItem("hub-pinned") === "1" && matchMedia("(min-width:761px)").matches) r.classList.add("pinned");
+    } catch (e) {}
+  })();
+  window.HUB = { root: "../../", assets: "../../_/", path: "test/部品見本" };
+</script>
+<script>window.NOTE_MACROS = {"vx": "{\\mathbf{x}}", "vw": "{\\mathbf{w}}"};</script>
+<script src="../../_/math.js"></script>
+<script src="../../_/mathjax/tex-svg.js" defer></script>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="ノート一覧">
+  <div class="dr-head">
+    <a class="dr-brand" href="../../index.html">Notebook <span>Hub</span></a>
+    <button type="button" class="dr-close" id="btn-close" aria-label="閉じる">×</button>
+  </div>
+  <div class="dr-search"><input id="filter" type="search" placeholder="ノート名・中身で検索" autocomplete="off" spellcheck="false"></div>
+  <nav class="dr-nav" id="nav"></nav>
+  <div class="dr-foot">
+    <span>テーマ</span>
+    <div class="theme-seg" role="group" aria-label="テーマ">
+      <button type="button" data-theme-set="light">ライト</button>
+      <button type="button" data-theme-set="dark">ダーク</button>
+    </div>
+  </div>
+</aside>
+
+<div class="page">
+  <header class="top"><div class="top-in">
+    <button type="button" class="menu" id="btn-menu" aria-label="ノート一覧" aria-controls="drawer"><span></span><span></span><span></span></button>
+    <a class="here" href="#top"><span class=up>test</span><i>/</i>部品見本</a>
+    <nav class="chips" aria-label="章"><a href="#c-01">01</a><a href="#c-02">02</a><a href="#formulas">公式</a><a href="#pairs">ペア</a></nav>
+    <div class="filters" role="group" aria-label="表示の切替"><button type="button" data-mode="all" aria-pressed="true">全部</button><button type="button" data-mode="accent">重要だけ</button><button type="button" data-mode="fx">公式だけ</button></div>
+  </div></header>
+  <main class="wrap" id="top">
+<header class="cover"><div class="eyebrow">テスト ／ 全部品の見た目確認</div><h1>部品見本</h1><p class="lead">整理型でも理解型でも、使う部品と見た目は同じ。違うのは書き方だけ。</p><div class="legend"><span><i class="dot k"></i>ふつう</span><span class="o"><i class="dot o"></i>試験で取るところ</span><span><span class="star">★</span>よく出る</span><span><span class="xr">→章</span> つながってる章</span><span class="hand">✎ 覚え方メモ</span></div></header>
+<section class="sheet" id="c-01"><header class="sh-head"><div class="divider"><span class="no">01</span></div><h3>文章と数式</h3><div class="sub">理解型でよく使う部品</div></header><div class="sh-body">
+<div class="box goal"><div class="bh">ゴール</div><ol class="ol"><li>識別関数 \(g(\vx)=\vw^{t}\vx\) の意味を言える</li><li>重みの更新を手で回せる</li></ol></div><div class="sec">なぜ直線で分けられる？</div><p class="note">点の集まりを「どっち側か」で分けたい。直線の式に点を入れると、片側ではプラス、反対側ではマイナスになる。だから符号を見るだけで判定できる。</p><div class="eq">\[g(\vx) = \vw^{t}\vx = w_0 + w_1x_1 + w_2x_2 \tag{1.17}\]</div><div class="fig "><div class="ttl">直線で分ける</div><svg viewBox="0 0 320 170" role="img" aria-label="直線で2つのクラスを分ける" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ls" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="f-ink3"/></marker><marker id="lso" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="f-ou"/></marker></defs><line x1="20" y1="150" x2="300" y2="20" class="s-main"/><circle cx="60" cy="40" r="6" class="f-ou"/><circle cx="90" cy="70" r="6" class="f-ou"/><circle cx="120" cy="45" r="6" class="f-ou"/><circle cx="200" cy="130" r="6" class="f-link"/><circle cx="240" cy="110" r="6" class="f-link"/><circle cx="260" cy="140" r="6" class="f-link"/><text x="250.0" y="30.0" class="t-m f-ink2" text-anchor="start" >g(x)=0</text></svg><div class="cap">金の点は g&gt;0、青緑の点は g&lt;0</div></div><div class="box why"><div class="bh">なぜ符号で決まる？</div><p class="note">直線上では \(g=0\)。そこから離れるほど \(|g|\) が大きくなり、向きで符号が変わる。</p></div><div class="box warn"><div class="bh">勘違いしやすい</div><p class="note">\(g=0\)（境界ぴったり）は「正解」ではない。<b>0 も修正する</b>。</p></div><div class="steps"><div class="bh">重みの更新</div><ol><li><b>間違えた点を見つける</b><span>g の符号が答えと逆</span></li><li><b>w に ρ b x を足す</b><span>答えの向きに少し動かす</span></li><li><b>全部正しくなるまで繰り返す</b></li></ol></div><details class="fold"><summary>導出（自分で考えてから開く）</summary><div class="fb"><p class="note">\(\vw' = \vw + \rho b\vx\) を代入すると \(b\,g'(\vx) = b\,g(\vx) + \rho\lVert\vx\rVert^2\) 。右の項は必ず正なので、間違いが直る方向に動く。∎</p></div></details><details class="fold quiz"><summary><span class="qt">確認</span>ρ を大きくするとどうなる？</summary><div class="fb"><p class="note">1回で大きく動くので速いが、行き過ぎて振動しやすい。</p></div></details><div class="ox"><div class="bh">○×で確認</div><ol><li class="oxq" data-a="o"><span class="oxt">境界ぴったり（g=0）の点も修正する</span><span class="oxb"><button type="button" data-v="o">○</button><button type="button" data-v="x">×</button></span><span class="oxw">○　0 は正解ではないから</span></li><li class="oxq" data-a="x"><span class="oxt">分けられないデータでも必ず止まる</span><span class="oxb"><button type="button" data-v="o">○</button><button type="button" data-v="x">×</button></span><span class="oxw">×　分けられないなら止まらない</span></li></ol></div><div class="check"><div class="bh">これが言えたら次へ</div><ul><li><label><input type="checkbox"><span>識別関数の符号の意味を言える</span></label></li><li><label><input type="checkbox"><span>更新式を1回手で回せる</span></label></li></ul></div><pre class="code">w = w + rho * b * x   # 間違えたら答えの向きに動かす</pre></div></section>
+<section class="sheet" id="c-02"><header class="sh-head"><div class="divider"><span class="no">02</span></div><h3>用語と公式</h3><div class="sub">整理型でよく使う部品</div></header><div class="sh-body">
+<div class="cmap"><div class="ml">この章の流れ</div><div class="flow"><span class="n">用語<small>グループで並べる</small></span><span class="seg"><span class="a">→</span><span class="n">公式<small>数値例つき</small></span></span><span class="seg"><span class="a">→</span><span class="n o">ひっかけ<small>入れ替えに注意</small></span></span></div><div class="gist">3つ以上並ぶと自動で2段組になる。</div></div><div class="cols"><div class="sec">用語</div><div class="grp"><div class="gl">基本</div><div class="items"><span class="t k">用語A</span><span class="d k">ふつうの説明</span><span class="t o">用語B<span class="star">★</span></span><span class="d o">大事なところ。<a class="xr" href="#c-01">→01</a> とつながる</span></div></div><div class="fx o"><div class="fl">例の公式</div><pre>y ＝ ax ＋ b
+例）a=2, b=1, x=3 → 7</pre></div><div class="trap">A と B の説明の入れ替えが定番</div><div class="hook">覚え方：A は「エー」で始まる</div><div class="tbw"><table class="tb"><thead><tr><th>比べる</th><th>A</th><th>B</th></tr></thead><tbody><tr class=""><td>速さ</td><td>速い</td><td>遅い</td></tr><tr class="o"><td>試験</td><td>よく出る</td><td>たまに</td></tr></tbody></table></div></div></div></section>
+<section class="board" id="formulas"><h3>公式まとめ</h3><div class="bsub">自動で集まる</div><div class="bb">
+<div class="fsheet"><div class="fx o"><div class="fl">例の公式 <a class="xr src" href="#c-02">02</a></div><pre>y ＝ ax ＋ b
+例）a=2, b=1, x=3 → 7</pre></div></div></div></section>
+<section class="board" id="pairs"><h3>ひっかけペア</h3><div class="bsub">自動で集まる</div><div class="bb">
+<div class="sec">例</div><div class="tbw"><table class="tb pairs"><thead><tr><th>A</th><th>B</th><th>見分け方（A ／ B）</th><th></th></tr></thead><tbody><tr><td>用語A</td><td>用語B</td><td>ふつう ／ 大事</td><td><a class="xr" href="#c-02">02</a></td></tr></tbody></table></div></div></section>
+  </main>
+</div>
+
+<script src="../../_/tree.js"></script>
+<script src="../../_/app.js"></script>
+
+</body>
+</html>
