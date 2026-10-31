@@ -1,5 +1,5 @@
 /* 本文の部品（全ノート共通）。どの科目でも同じ見た目になる。色の意味：
-   グレー＝ふつう（-）／金＝強調・上乗せ（+）／緑＝なぜ／珊瑚＝ひっかけ・勘違い／青緑＝章リンク */
+   グレー＝ふつう（-）／オレンジ（アクセント）＝強調・上乗せ（+）／緑＝なぜ／珊瑚＝ひっかけ・勘違い／青緑＝章リンク */
 
 /* ───── cover ───── */
 .cover{padding-block:40px 18px}
@@ -30,7 +30,7 @@
 pre.code{margin:0 0 16px; padding:12px 14px; background:var(--sheet-2); border:1px solid var(--rule); border-radius:10px; overflow-x:auto; font:12.5px/1.7 var(--f-mono); color:var(--ink)}
 mjx-container{color:var(--ink)}
 
-/* 囲み：なぜ（緑）／試験で取る（金）／勘違い（珊瑚）／ゴール（灰） */
+/* 囲み：なぜ（緑）／試験で取る（オレンジ）／勘違い（珊瑚）／ゴール（灰） */
 .box{margin:0 0 16px; padding:12px 16px 4px; border-radius:12px; border:1px solid var(--rule); background:var(--sheet-2); max-width:80ch}
 .box .bh, .ox .bh, .check .bh, .steps .bh{font-size:var(--fs-0); font-weight:700; letter-spacing:.12em; margin-bottom:6px; color:var(--ink-3)}
 .box.why{border-color:color-mix(in srgb, var(--g) 45%, var(--rule)); background:var(--g-bg)} .box.why .bh{color:var(--g)}

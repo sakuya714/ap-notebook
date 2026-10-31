@@ -11,7 +11,7 @@ NOTES = os.path.join(ROOT, "notes")
 THEME = os.path.join(ROOT, "theme")
 DOCS = os.path.join(ROOT, "docs")
 ASSETS = "_"  # docs/_/ に共通の CSS・JS を置く
-SITE = ("Notebook", "Hub")  # サイト名（前半・後半。後半が金色になる）
+SITE = ("Notebook", "Hub")  # サイト名（前半・後半。後半がアクセント色になる）
 
 def natural(s):
     return [int(t) if t.isdigit() else t for t in re.split(r"(\d+)", s)]

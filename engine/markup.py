@@ -47,7 +47,7 @@ def split_bar(s, n):
     return (parts + [""] * n)[:n]
 
 def flow_html(spec, ctx):
-    """A::補足 >[ラベル] +B > C  →  箱を矢印でつないだ流れ図（+ は金色の箱）"""
+    """A::補足 >[ラベル] +B > C  →  箱を矢印でつないだ流れ図（+ はアクセント色の箱）"""
     toks = re.split(r"\s>(\[[^\]]*\])?\s", " " + spec.strip() + " ")
     nodes, labs = toks[0::2], toks[1::2]
     out = []

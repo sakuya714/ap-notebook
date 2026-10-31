@@ -18,7 +18,7 @@ def path(pts):
     return "M" + " L".join(f"{x:.1f},{y:.1f}" for x, y in pts)
 
 def arrow_defs(idn="ah"):
-    """矢印の先端（id=idn は灰色、idn+'o' は金色）。marker-end="url(#ah)" のように使う"""
+    """矢印の先端（id=idn は灰色、idn+'o' はアクセント色）。marker-end="url(#ah)" のように使う"""
     return (f'<defs><marker id="{idn}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">'
             f'<path d="M0,0 L10,5 L0,10 z" class="f-ink3"/></marker>'
             f'<marker id="{idn}o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">'
