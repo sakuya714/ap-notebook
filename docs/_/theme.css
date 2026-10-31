@@ -1,30 +1,30 @@
 /* 外枠と土台（全ノート共通）：色・文字・上部バー・サイドバー・ホーム。本文の部品は blocks.css
-   ダーク＝黒＋真鍮、ライト＝生成り＋テラコッタ（Claude 風。真っ白は目が疲れるので使わない） */
+   アクセントはダーク・ライトとも Claude のオレンジ。ダーク＝温かい濃いグレー、ライト＝濃いめの生成り（真っ白は目が疲れるので使わない） */
 :root{
-  --bg:#0c0d0f;
-  --sheet:#131518;
-  --sheet-2:#1a1d21;
-  --sheet-3:#22262b;
-  --rule:#1f2328;
-  --line:#343a42;
-  --ink:#ebe8e1;
-  --ink-2:#b9b5ad;
-  --ink-3:#7f7c76;
-  --kihon:#8794a6;
-  --ou:#d8b46c;
-  --ou-2:#f0d59a;
-  --ou-bg:rgba(216,180,108,.11);
+  --bg:#262624;
+  --sheet:#2d2d2a;
+  --sheet-2:#33332f;
+  --sheet-3:#3b3a36;
+  --rule:#3c3b36;
+  --line:#4d4c45;
+  --ink:#f0eee6;
+  --ink-2:#c2c0b6;
+  --ink-3:#8f8d84;
+  --kihon:#9c9a92;
+  --ou:#d97757;
+  --ou-2:#ea987b;
+  --ou-bg:rgba(217,119,87,.14);
   --sel:rgba(255,255,255,.07);
   --link:#86b9b4;
   --link-bg:rgba(134,185,180,.12);
-  --warn:#d99a86;
-  --warn-bg:rgba(217,154,134,.10);
+  --warn:#e3868f;
+  --warn-bg:rgba(227,134,143,.10);
   --g:#86c3a0;
   --g-bg:rgba(134,195,160,.09);
-  --panel:#121417;
+  --panel:#1f1e1d;
   --hover:rgba(255,255,255,.05);
   --scrim:rgba(0,0,0,.5);
-  --shadow:0 0 60px rgba(0,0,0,.6);
+  --shadow:0 0 60px rgba(0,0,0,.5);
   --f-hand:"Klee One","Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif;
   --f-body:"Zen Kaku Gothic New","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
   --f-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,"Zen Kaku Gothic New",monospace;
