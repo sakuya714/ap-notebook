@@ -112,7 +112,7 @@ b,strong{font-weight:700; color:var(--ink)}
 .dr-search input::placeholder{color:var(--ink-3)}
 .dr-nav{flex:1; overflow:auto; padding:2px 10px 16px}
 .grp-n{margin-top:6px}
-.grp-h{display:flex; align-items:center; gap:8px; width:100%; min-height:30px; padding:4px 10px 4px 8px; border:0; background:none; cursor:pointer; text-align:left; font:inherit; font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--ink-3)}
+.grp-h{display:flex; align-items:center; gap:8px; width:100%; min-height:30px; padding:4px 10px 4px 8px; border:0; background:none; cursor:pointer; text-align:left; font:inherit; font-size:12px; font-weight:600; letter-spacing:.04em; color:var(--ink-3)}
 .grp-h:hover{color:var(--ink-2)}
 .grp-h .car{flex:none; width:10px; height:10px; display:grid; place-items:center; transition:transform .15s}
 .grp-h .car::before{content:""; border-left:4px solid currentColor; border-top:3.5px solid transparent; border-bottom:3.5px solid transparent}
@@ -122,7 +122,6 @@ b,strong{font-weight:700; color:var(--ink)}
 /* 子は ▶/● の真下から1段下げる（縦線が ▶ の真下を通る） */
 .grp-n.open > .grp-b{display:block; margin-left:12px; padding-left:0; border-left:1px solid var(--rule)}
 .grp-n .grp-n{margin-top:0}
-.grp-n .grp-n > .grp-h{font-size:12px; font-weight:500; letter-spacing:.02em; color:var(--ink-2)}
 .item{display:flex; align-items:center; gap:8px; width:100%; min-height:34px; padding:6px 10px 6px 8px; border-radius:9px; text-decoration:none; color:var(--ink-2)}
 .item:hover{background:var(--hover); color:var(--ink)}
 .item .dt{flex:none; width:10px; height:10px; display:grid; place-items:center}
