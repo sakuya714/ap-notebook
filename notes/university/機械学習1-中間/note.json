@@ -1,0 +1,16 @@
+{
+  "title": "機械学習1 中間",
+  "type": "理解型",
+  "macros": {
+    "vx": "{\\mathbf{x}}",
+    "vy": "{\\mathbf{y}}",
+    "vw": "{\\mathbf{w}}",
+    "vp": "{\\mathbf{p}}",
+    "vm": "{\\mathbf{m}}",
+    "vb": "{\\mathbf{b}}",
+    "vX": "{\\mathbf{X}}",
+    "vphi": "{\\boldsymbol{\\phi}}",
+    "vlam": "{\\boldsymbol{\\lambda}}",
+    "valpha": "{\\boldsymbol{\\alpha}}"
+  }
+}
