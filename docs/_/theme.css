@@ -1,4 +1,5 @@
-/* 外枠と土台（全ノート共通）：色・文字・上部バー・サイドバー・ホーム。本文の部品は blocks.css */
+/* 外枠と土台（全ノート共通）：色・文字・上部バー・サイドバー・ホーム。本文の部品は blocks.css
+   ダーク＝黒＋真鍮、ライト＝生成り＋テラコッタ（Claude 風。真っ白は目が疲れるので使わない） */
 :root{
   --bg:#0c0d0f;
   --sheet:#131518;
@@ -31,20 +32,20 @@
 }
 @media (prefers-color-scheme: light){
   :root:not([data-theme="dark"]){
-    --bg:#e6e8eb; --sheet:#fbfbfa; --sheet-2:#f1f2f3; --sheet-3:#e6e8ea; --rule:#e7ebf0; --line:#c9ced5;
-    --ink:#17191d; --ink-2:#464a51; --ink-3:#7d828a;
-    --kihon:#5b6879; --ou:#8a6414; --ou-2:#6e4f0c; --ou-bg:rgba(176,130,30,.12);
-    --link:#2b6d68; --link-bg:rgba(43,109,104,.10); --warn:#a1442f; --warn-bg:rgba(161,68,47,.08);
-    --g:#2f7a55; --g-bg:rgba(47,122,85,.07); --panel:#f4f4f2; --hover:rgba(0,0,0,.045); --scrim:rgba(20,22,26,.28); --shadow:0 0 50px rgba(0,0,0,.16);
+    --bg:#efede6; --sheet:#faf9f5; --sheet-2:#f4f2eb; --sheet-3:#ebe8df; --rule:#e4e0d5; --line:#cfc9ba;
+    --ink:#1f1e1b; --ink-2:#4d4a42; --ink-3:#85806f;
+    --kihon:#857f6e; --ou:#c0643f; --ou-2:#a3502f; --ou-bg:rgba(217,119,87,.13);
+    --link:#2e6b66; --link-bg:rgba(46,107,102,.10); --warn:#b03a4a; --warn-bg:rgba(176,58,74,.08);
+    --g:#3d7a4f; --g-bg:rgba(61,122,79,.08); --panel:#f4f2eb; --hover:rgba(60,50,30,.05); --scrim:rgba(40,32,20,.25); --shadow:0 0 50px rgba(60,40,10,.12);
     color-scheme:light;
   }
 }
 :root[data-theme="light"]{
-  --bg:#e6e8eb; --sheet:#fbfbfa; --sheet-2:#f1f2f3; --sheet-3:#e6e8ea; --rule:#e7ebf0; --line:#c9ced5;
-  --ink:#17191d; --ink-2:#464a51; --ink-3:#7d828a;
-  --kihon:#5b6879; --ou:#8a6414; --ou-2:#6e4f0c; --ou-bg:rgba(176,130,30,.12);
-  --link:#2b6d68; --link-bg:rgba(43,109,104,.10); --warn:#a1442f; --warn-bg:rgba(161,68,47,.08);
-    --g:#2f7a55; --g-bg:rgba(47,122,85,.07); --panel:#f4f4f2; --hover:rgba(0,0,0,.045); --scrim:rgba(20,22,26,.28); --shadow:0 0 50px rgba(0,0,0,.16);
+  --bg:#efede6; --sheet:#faf9f5; --sheet-2:#f4f2eb; --sheet-3:#ebe8df; --rule:#e4e0d5; --line:#cfc9ba;
+    --ink:#1f1e1b; --ink-2:#4d4a42; --ink-3:#85806f;
+    --kihon:#857f6e; --ou:#c0643f; --ou-2:#a3502f; --ou-bg:rgba(217,119,87,.13);
+    --link:#2e6b66; --link-bg:rgba(46,107,102,.10); --warn:#b03a4a; --warn-bg:rgba(176,58,74,.08);
+    --g:#3d7a4f; --g-bg:rgba(61,122,79,.08); --panel:#f4f2eb; --hover:rgba(60,50,30,.05); --scrim:rgba(40,32,20,.25); --shadow:0 0 50px rgba(60,40,10,.12);
   color-scheme:light;
 }
 
@@ -141,7 +142,7 @@ b,strong{font-weight:700; color:var(--ink)}
 .dr-foot{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:14px 18px 18px 22px; border-top:1px solid var(--rule); font-size:12px; color:var(--ink-3)}
 .theme-seg{display:flex; padding:3px; border:1px solid var(--rule); border-radius:999px; background:var(--bg)}
 .theme-seg button{border:0; background:none; padding:4px 13px; border-radius:999px; font:inherit; font-size:12px; color:var(--ink-3); cursor:pointer}
-.theme-seg button[aria-pressed="true"]{background:var(--ou); color:#16130c; font-weight:700}
+.theme-seg button[aria-pressed="true"]{background:var(--ou); color:var(--bg); font-weight:700}
 
 /* ───── 本文の外側 ───── */
 .page{min-height:100dvh}
