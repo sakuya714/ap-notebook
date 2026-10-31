@@ -78,7 +78,7 @@ def toc_html(ctx):
 
 def formulas_html(ctx):
     fs = "".join(f'<div class="fx{" o" if ou else ""}"><div class="fl">{esc(lab) if lab else "公式"} '
-                 f'<a class="xr src" href="#c-{attr(ch or "")}">{esc(ch or "")}</a></div><pre>{esc(chr(10).join(lines))}</pre></div>'
+                 f'<a class="xr src" href="#c-{attr(ch or "")}">{esc(ch or "")}</a></div><div class="fxb">{chr(10).join(inline(l) for l in lines)}</div></div>'
                  for ch, lab, lines, ou in ctx.formulas)
     return f'<div class="fsheet">{fs}</div>'
 

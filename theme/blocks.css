@@ -75,7 +75,15 @@ mjx-container{color:var(--ink)}
 .steps li span{grid-column:2; color:var(--ink-3); font-size:var(--fs-0)}
 
 /* ひっかけペア（巻末に自動で集める） */
-.pairs td:nth-child(2){color:var(--ink); font-weight:700}
+.pairs td:nth-child(2){color:var(--ink); font-weight:700; white-space:nowrap}
+.pairs td:nth-child(3){min-width:12em}
+@media (max-width:480px){  /* スマホ：1行目に A｜B｜章、2行目に見分け方（横スクロールさせない） */
+  .pairs, .pairs tbody{display:block} .pairs thead{display:none}
+  .pairs tr{display:grid; grid-template-columns:1fr 1fr auto; column-gap:10px; padding:7px 0; border-bottom:1px solid var(--rule)}
+  .tb.pairs td{border:0; padding:1px 0; white-space:normal; min-width:0}
+  .tb.pairs td:nth-child(3){grid-column:1 / 3; grid-row:2}
+  .tb.pairs td:nth-child(4){grid-column:3; grid-row:1}
+}
 
 /* ───── part band ───── */
 .part{margin-top:56px; padding-block:18px 6px; border-top:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap}
@@ -128,9 +136,11 @@ mjx-container{color:var(--ink)}
 /* formula */
 .fx{break-inside:avoid; background:var(--sheet-2); border:1px solid var(--rule); border-radius:10px; padding:10px 12px 10px; margin:0 0 14px; overflow-x:auto}
 .fx .fl{font-size:var(--fs-0); letter-spacing:.14em; color:var(--ou); margin-bottom:4px}
-.fx pre{margin:0; font-family:var(--f-mono); font-size:12.5px; line-height:1.7; color:var(--ink); white-space:pre}
+.fx .fxb{margin:0; font-family:var(--f-mono); font-size:12.5px; line-height:1.7; color:var(--ink); white-space:pre}
+.fx .fxb mjx-container{font-size:110%}
 .fx.o{border-color:color-mix(in srgb, var(--ou) 40%, var(--rule))}
-@media (max-width:480px){ .fx pre{white-space:pre-wrap; overflow-wrap:anywhere; font-size:12px} }
+@media (max-width:480px){ .fx .fxb{white-space:pre-wrap; overflow-wrap:anywhere; font-size:12px} }
+@media (max-width:480px){ .eq{padding:10px 8px} .eq mjx-container{font-size:94%} }  /* スマホでは1行の数式を少しだけ詰めて、横スクロールを減らす */
 
 /* hand-written hook bubble */
 .hook{break-inside:avoid; font-family:var(--f-hand); font-size:var(--fs-1); color:var(--ink); background:transparent; border:1.5px solid var(--line); border-radius:18px 18px 18px 4px; padding:7px 14px; margin:0 0 14px; display:block; width:fit-content; max-width:100%}

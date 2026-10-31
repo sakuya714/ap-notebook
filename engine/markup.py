@@ -101,8 +101,8 @@ class Builder:
         label, lines, ou = self.fx
         self.ctx.formulas.append((self.ch, label, lines, ou))
         self.ctx.uses.add("formula")
-        body = "\n".join(esc(l) for l in lines)
-        self.add(DENSE, f'<div class="fx{" o" if ou else ""}"><div class="fl">{esc(label) if label else "公式"}</div><pre>{body}</pre></div>')
+        body = "\n".join(inline(l, self.ctx) for l in lines)  # 公式の中でも **太字** や $数式$ が使える
+        self.add(DENSE, f'<div class="fx{" o" if ou else ""}"><div class="fl">{esc(label) if label else "公式"}</div><div class="fxb">{body}</div></div>')
         self.fx = None
 
     def flush_tbl(self):
@@ -226,10 +226,11 @@ class Builder:
             ctx.uses.add("box-" + tone)
             self.add(WIDE, f'<div class="box {attr(tone)}"><div class="bh">{inline(lab, ctx)}</div>{self.sub(lines)}</div>')
         elif kind == "fold":
-            self.add(WIDE, f'<details class="fold"><summary>{inline(title or "開く", ctx)}</summary><div class="fb">{self.sub(lines)}</div></details>')
+            # 見出しは span で1つにまとめる（summary は flex なので、数式が混ざると文と式がばらばらに横並びになる）
+            self.add(WIDE, f'<details class="fold"><summary><span>{inline(title or "開く", ctx)}</span></summary><div class="fb">{self.sub(lines)}</div></details>')
         elif kind == "quiz":
             ctx.uses.add("quiz")
-            self.add(WIDE, f'<details class="fold quiz"><summary><span class="qt">確認</span>{inline(title, ctx)}</summary><div class="fb">{self.sub(lines)}</div></details>')
+            self.add(WIDE, f'<details class="fold quiz"><summary><span class="qt">確認</span><span>{inline(title, ctx)}</span></summary><div class="fb">{self.sub(lines)}</div></details>')
         elif kind == "ox":
             ctx.uses.add("ox")
             rows = ""
@@ -418,7 +419,8 @@ class Builder:
             return
         if s == ")":
             self.flush_items(); return
-        if s.startswith("(") and not s.startswith("(（"):
+        # グループの開始は「(」だけの行か「( ラベル」（半角スペース付き）。「(2.28) は…」のような文は段落のまま
+        if s == "(" or s.startswith("( "):
             self.flush_items()
             self.items = []; self.auto_grp = False
             self.glabel = s[1:].strip() or None
@@ -449,6 +451,6 @@ class Builder:
             else:
                 self.items.append(f'<span class="full {kind}">{inline(body, self.ctx)}{star}</span>')
             return
-        # ふつうの文。短い1行は用語の間に混ぜる（dense）、長い文章は1段で読ませる（wide）
+        # ふつうの文は、長さに関係なく1段で読ませる（短い文を2段組に混ぜると、話の流れが左右に飛んで読めなくなる）
         self.flush_items()
-        self.add(DENSE if len(s) <= 60 else WIDE, f'<p class="note">{inline(s, self.ctx)}</p>')
+        self.add(WIDE, f'<p class="note">{inline(s, self.ctx)}</p>')
